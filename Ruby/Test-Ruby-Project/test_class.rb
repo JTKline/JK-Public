@@ -21,3 +21,7 @@ aName.say_bye
 aName.name = "David"
 aName.say_hi
 aName.say_bye
+
+aName.name = "I don't know your name."
+aName.say_hi
+aName.say_bye

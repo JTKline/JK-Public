@@ -6,11 +6,27 @@ class TestClass
   end
 
   def say_hi
-    puts "Hi #{@name}"
+    if @name.respond_to?("each")
+      @name.each do |name|
+        puts "Hi #{name}"
+      end
+    else
+      puts "Hey #{@name}"
+    end
+  end
+
+  def join
+    @name.each do |name|
+      @name = @name, name
+    end
   end
 
   def say_bye
-    puts "Bye #{@name}"
+    if @name.respond_to?("join")
+      puts "See ya #{@name.join(", ")}."
+    else
+      puts "Later #{@name}."
+    end
   end
 end
 
@@ -25,3 +41,8 @@ aName.say_bye
 aName.name = "I don't know your name."
 aName.say_hi
 aName.say_bye
+
+aName.name = ["John", "David", "Timmy"]
+aName.say_hi
+aName.say_bye
+

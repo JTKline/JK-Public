@@ -1,8 +1,8 @@
 class TestClass
   attr_accessor :name
 
-  def initialize(name = "John")
-    @name = name
+  def initialize
+    @name = "John"
   end
 
   def say_hi
